@@ -1,0 +1,22 @@
+[package]
+name = "manta-types"
+version = "3.0.0"
+authors = ["Manta Network <contact@manta.network>"]
+edition = "2018"
+license = "Apache-2.0"
+repository = "https://github.com/Manta-Network/manta-types"
+description = "Type definitions for Manta ecosystem"
+readme = "README.md"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+
+# Manta Dependencies
+manta-crypto = { branch = "error-wrapper", git = "https://github.com/Manta-Network/manta-crypto", default-features = false }
+manta-asset = { branch = "error-wrapper", git = "https://github.com/Manta-Network/manta-asset", default-features = false }
+manta-error = { git = "https://github.com/Manta-Network/manta-error", default-features = false }
+
+# Arkworks dependencies
+ark-std = { version = "0.2.0", default-features = false }
