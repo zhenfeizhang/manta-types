@@ -23,6 +23,15 @@ mod serdes;
 use manta_asset::{AssetId, MantaAsset};
 use manta_crypto::{AccountMembership, LedgerMerkleTreeRoot};
 
+pub const MINT_PAYLOAD_SIZE: usize = 112;
+pub const PRIVATE_TRANSFER_PAYLOAD_SIZE: usize = 608;
+pub const RECLAIM_PAYLOAD_SIZE: usize = 512;
+
+/// Type aliases
+pub type MintPayload = [u8; MINT_PAYLOAD_SIZE];
+pub type PrivateTransferPayload = [u8; PRIVATE_TRANSFER_PAYLOAD_SIZE];
+pub type ReclaimPayload = [u8; RECLAIM_PAYLOAD_SIZE];
+
 /// Input data to a mint extrinsic.
 #[derive(Debug, Clone, Default, PartialEq)]
 pub struct MintData {
