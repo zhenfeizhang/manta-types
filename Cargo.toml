@@ -19,4 +19,8 @@ manta-asset = { branch = "error-wrapper", git = "https://github.com/Manta-Networ
 manta-error = { git = "https://github.com/Manta-Network/manta-error", default-features = false }
 
 # Arkworks dependencies
+ark-ed-on-bls12-381 = { version = "0.2.0", default-features = false, features = [ "r1cs" ] }
 ark-std = { version = "0.2.0", default-features = false }
+ark-groth16 = { version = "0.2.0", default-features = false, features = [ "r1cs" ] }
+ark-relations = { version = "0.2.0", default-features = false }
+ark-serialize = { version = "0.2.0", default-features = false, features = [ "derive" ] }

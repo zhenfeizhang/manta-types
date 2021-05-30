@@ -19,6 +19,7 @@ mod default;
 mod metadata;
 mod sanity;
 mod serdes;
+mod zkp;
 
 use manta_asset::{AssetId, MantaAsset};
 use manta_crypto::{AccountMembership, LedgerMerkleTreeRoot};
