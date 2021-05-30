@@ -24,6 +24,8 @@ mod zkp;
 use manta_asset::{AssetId, MantaAsset};
 use manta_crypto::{AccountMembership, LedgerMerkleTreeRoot};
 
+pub use metadata::BuildMetadata;
+
 pub const MINT_PAYLOAD_SIZE: usize = 112;
 pub const PRIVATE_TRANSFER_PAYLOAD_SIZE: usize = 608;
 pub const RECLAIM_PAYLOAD_SIZE: usize = 512;
