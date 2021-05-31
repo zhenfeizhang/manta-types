@@ -36,7 +36,7 @@ pub type PrivateTransferPayload = [u8; PRIVATE_TRANSFER_PAYLOAD_SIZE];
 pub type ReclaimPayload = [u8; RECLAIM_PAYLOAD_SIZE];
 
 /// Input data to a mint extrinsic.
-#[derive(Debug, Clone, Default, PartialEq)]
+#[derive(Debug, Copy, Clone, Default, PartialEq)]
 pub struct MintData {
 	pub asset_id: AssetId,
 	pub amount: u64,
@@ -67,7 +67,7 @@ pub struct ReclaimData {
 }
 
 /// Data required for a sender to spend a coin.
-#[derive(Debug, Clone, Default, PartialEq)]
+#[derive(Debug, Copy, Clone, Default, PartialEq)]
 pub struct SenderData {
 	pub k: [u8; 32],
 	pub void_number: [u8; 32],
@@ -75,7 +75,7 @@ pub struct SenderData {
 }
 
 /// Data required for a receiver to receive a coin.
-#[derive(Debug, Clone, Default, PartialEq)]
+#[derive(Debug, Copy, Clone, Default, PartialEq)]
 pub struct ReceiverData {
 	pub k: [u8; 32],
 	pub cm: [u8; 32],
