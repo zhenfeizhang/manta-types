@@ -1,0 +1,26 @@
+[package]
+name = "manta-types"
+version = "0.1.0"
+authors = ["Manta Network <contact@manta.network>"]
+edition = "2018"
+license = "Apache-2.0"
+repository = "https://github.com/Manta-Network/manta-types"
+description = "Type definitions for Manta ecosystem"
+readme = "README.md"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+
+# Manta Dependencies
+manta-asset = { path = "../manta-asset", default-features = false }
+manta-crypto = { branch = "manta", git = "https://github.com/Manta-Network/manta-crypto", default-features = false }
+manta-error = { branch = "manta", git = "https://github.com/Manta-Network/manta-error", default-features = false }
+
+# Arkworks dependencies
+ark-ed-on-bls12-381 = { version = "0.2.0", default-features = false, features = [ "r1cs" ] }
+ark-std = { version = "0.2.0", default-features = false }
+ark-groth16 = { version = "0.2.0", default-features = false, features = [ "r1cs" ] }
+ark-relations = { version = "0.2.0", default-features = false }
+ark-serialize = { version = "0.2.0", default-features = false, features = [ "derive" ] }

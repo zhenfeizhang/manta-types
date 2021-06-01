@@ -46,13 +46,13 @@ impl BuildMetadata for MantaAsset {
 		let tree = LedgerMerkleTree::new(param.clone(), &leaves)?;
 		let root = tree.root();
 
-		let index = match leaves.iter().position(|x| *x == self.commitment) {
+		let index = match leaves.iter().position(|x| *x == self.utxo) {
 			Some(p) => p,
 			None => {
 				return Err(MantaError::LeavesNotFound);
 			}
 		};
-		let membership = tree.generate_proof(index, &self.commitment)?;
+		let membership = tree.generate_proof(index, &self.utxo)?;
 
 		Ok(SenderMetaData {
 			asset: self.clone(),

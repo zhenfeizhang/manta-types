@@ -26,7 +26,7 @@ impl MantaSerDes for MintData {
 		writer.write_all(self.amount.to_le_bytes().as_ref())?;
 		writer.write_all(&self.cm)?;
 		writer.write_all(&self.k)?;
-		writer.write_all(&self.s).map_err(|e|e.into())
+		writer.write_all(&self.s).map_err(|e| e.into())
 	}
 
 	/// Deserialize an array of 104 bytes into a MintData.
@@ -55,7 +55,7 @@ impl MantaSerDes for PrivateTransferData {
 		self.sender_2.serialize(&mut writer)?;
 		self.receiver_1.serialize(&mut writer)?;
 		self.receiver_2.serialize(&mut writer)?;
-		writer.write_all(&self.proof.as_ref()).map_err(|e|e.into())
+		writer.write_all(&self.proof.as_ref()).map_err(|e| e.into())
 	}
 
 	/// Deserialize the private transfer data
@@ -86,7 +86,7 @@ impl MantaSerDes for ReclaimData {
 		self.sender_1.serialize(&mut writer)?;
 		self.sender_2.serialize(&mut writer)?;
 		self.receiver.serialize(&mut writer)?;
-		writer.write_all(&self.proof.as_ref()).map_err(|e|e.into())
+		writer.write_all(&self.proof.as_ref()).map_err(|e| e.into())
 	}
 
 	/// Deserialize the private transfer data
@@ -117,7 +117,7 @@ impl MantaSerDes for SenderData {
 	fn serialize<W: Write>(&self, mut writer: W) -> Result<(), MantaError> {
 		writer.write_all(&self.k)?;
 		writer.write_all(&self.void_number)?;
-		writer.write_all(&self.root).map_err(|e|e.into())
+		writer.write_all(&self.root).map_err(|e| e.into())
 	}
 
 	/// Deserialize an array of 64 bytes into a SenderData.
@@ -136,7 +136,7 @@ impl MantaSerDes for ReceiverData {
 		writer.write_all(&self.k)?;
 		writer.write_all(&self.cm)?;
 		writer.write_all(&self.sender_pk)?;
-		writer.write_all(&self.cipher).map_err(|e|e.into())
+		writer.write_all(&self.cipher).map_err(|e| e.into())
 	}
 
 	/// Deserialize an array of 80 bytes into a receiver data.
