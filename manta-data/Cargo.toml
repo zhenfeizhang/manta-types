@@ -1,5 +1,5 @@
 [package]
-name = "manta-types"
+name = "manta-data"
 version = "0.1.0"
 authors = ["Manta Network <contact@manta.network>"]
 edition = "2018"
